@@ -23,7 +23,7 @@ void setup() {
   dht3.begin();
 }
  
-void loop() {
+void loop() { //a loop for the Arduino that repeatedly collects sensor data then writes it to the serial port for reading by the Python program
   dht2.read();
   dht3.read();
   delay(4000);
@@ -84,7 +84,7 @@ void loop() {
   L2 = RCtime(photocellPin); //calls function that reads time for light to charge capacitor
   delay(2000);
   
-  Serial.print("Light: ");
+  Serial.print("Light: "); //send collected data on serial port accessble by Rasberry Pi Python program.
   Serial.print(L2);
   Serial.print(" H1: "); 
   Serial.print(h1);
